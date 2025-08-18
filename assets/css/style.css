@@ -379,6 +379,16 @@ footer .copyright img{
 .navbar .logo1:hover{
     opacity: 0.7;
 }
+
 .container{
     margin-bottom: 0;
+}
+
+.pagination a{
+    color: #000000;
+}
+
+.pagination li:hover a{
+    color: #d4c29c;
+    background-color: black;
 }

@@ -55,8 +55,12 @@
           <hr>
         </div>
         <div class="row mx-auto container-fluid">
-          <div class="product col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/bcheesecake.jpg"/>
+        <?php include('conn/get_musttry_products.php'); ?>
+      
+        <?php while($row= $musttry_products->fetch_assoc()){ ?>
+          
+          <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+            <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_img'];?>"/>
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
@@ -64,49 +68,12 @@
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
             </div>
-            <h5 class="b-name">Blueberry Cheesecake</h5>
-            <h4 class="b-price">Php 149.00</h4>
-            <button class="order-btn">Order Now</button>
+            <h5 class="b-name"><?php echo $row['product_name']; ?></h5>
+            <h4 class="b-price">Php <?php echo $row['product_price']; ?></h4>
+           <a href=<?php echo "single_menu.php?product_id=". $row['product_id'] ?>><button class="order-btn">Add To Basket</button></a>
           </div>
-          <div class="product col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/Watermelon.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="b-name">Watermelon Slushie</h5>
-            <h4 class="b-price">Php 99.00</h4>
-            <button class="order-btn">Order Now</button>
-          </div>
-          <div class="product col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/carrotcake.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="b-name">Carrot Cake</h5>
-            <h4 class="b-price">Php 139.00</h4>
-            <button class="order-btn">Order Now</button>
-          </div>
-          <div class="product col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/limejuice.jpg"/>
-            <div class="star">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-            <h5 class="b-name">Lime Juice</h5>
-            <h4 class="b-price">Php 99.00</h4>
-            <button class="order-btn">Order Now</button>
-          </div>
+         
+        <?php }?>
 
         </div>
       </section>
