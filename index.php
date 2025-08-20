@@ -60,7 +60,7 @@
         <?php while($row= $musttry_products->fetch_assoc()){ ?>
           
           <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-            <img class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_img'];?>"/>
+            <img onclick="window.location.href='single_menu.php';" class="img-fluid mb-3" src="assets/imgs/<?php echo $row['product_img'];?>"/>
             <div class="star">
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
