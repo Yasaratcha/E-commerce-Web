@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('server/connection.php');
+include('conn/connection.php');
 
 // Function to verify user credentials
 function verify_user($conn, $email, $password) {

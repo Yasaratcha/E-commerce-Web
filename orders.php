@@ -1,5 +1,5 @@
 <?php
-include_once("../server/connection.php");
+include_once("conn/connection.php");
 
 // Handle the update request for order status
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['order_id']) && isset($_POST['status'])) {

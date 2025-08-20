@@ -1,5 +1,5 @@
 <?php
-include_once('../server/connection.php');
+include_once('conn/connection.php');
 
 if (isset($_POST['add_product'])) {
     // Handle file upload

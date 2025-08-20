@@ -1,5 +1,5 @@
 <?php 
-include_once "../server/connection.php";
+include_once "conn/connection.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
