@@ -5,13 +5,13 @@ margin-left: 500px;
 
 }
 
-
 *{
 margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
 
+/* Font */
 body{
     font-family: 'Poppins',sans-serif;
 }
@@ -61,7 +61,7 @@ button{
 button:hover{
     background-color: coral;
 }
-
+/* Navbar */
 .navbar{
     font-size: 16px;
     padding-top: 2 rem !important;
@@ -261,7 +261,7 @@ button:hover{
   grid-template-columns: 1fr 1.1fr 1fr;
   gap: 10px;
   width: 100%;
-  height: auto; /* ✅ allow collage to expand naturally */
+  height: auto; 
   margin: 0;
   padding: 0;
   align-items: stretch;
@@ -277,7 +277,7 @@ button:hover{
 .collage .big img,
 .collage .big2 img {
   width: 100%;
-  height: 100%;  /* ✅ fill full height */
+  height: 100%;  
   object-fit: cover;
 }
 
@@ -287,7 +287,7 @@ button:hover{
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
-  height: 100%; /* ✅ stretch to parent height */
+  height: 100%; 
 }
 
 .collage .grid .item {
@@ -391,4 +391,223 @@ footer .copyright img{
 .pagination li:hover a{
     color: #d4c29c;
     background-color: black;
+}
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.small-img-col{
+    flex-basis: 25%;
+    cursor: pointer;
+}
+
+.small-img-col:hover{
+    opacity: 0.7;
+}
+
+
+.single-product input{
+    width: 5%;
+    height: 5%;
+    padding-left:10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.single-product input:focus{
+    outline: none;
+}
+
+#related-products img:hover{
+    opacity: 0.7;
+}
+
+#login-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #fb774b;
+}
+
+#login-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#login-form #login-btn{
+    background-color: #fb774b;
+    color: white;
+}
+
+#login-form #register-url{
+    color: #fb774b;
+}
+
+.profile img{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+#register-form{
+    width: 50%;
+    margin: 5px auto;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #fb774b;
+}
+
+#register-form input{
+    width: 50%;
+    margin: 5px auto;
+}
+
+#register-form #register-btn{
+    background-color: #fb774b;
+    color: white;
+}
+
+#register-form #login-url{
+    color: #fb774b;
+}
+
+#account-form{
+    width: 50%;
+    margin: 35px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#account-form input{
+    margin: 5px auto;
+}
+
+#account-form #change-pass-btn{
+    color: white;
+    background-color: #fb774b;
+}
+
+.account-info #order-btn ,#logout-btn{
+    color: #fb774b;
+    text-decoration: none;
+}
+
+.cart table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart .product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart th{
+    text-align: left;
+    padding: 5px 10px;
+    color: white;
+    background-color: #fb774b;
+}
+
+.cart td{
+    padding: 10px 20px;
+}
+
+.cart td img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.cart td input{
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+.cart td a{
+    color: #fb774b;
+}
+
+.cart .remove-btn{
+    color: #fb774b;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cart .edit-btn{
+    color: #fb774b;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.cart .product-info p{
+    margin: 3px;
+}
+
+.cart-total{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-total table{
+    width: 100%;
+    max-width: 500px;
+    border-top: 3px solid #fb774b;
+}
+
+td:last-child{
+    text-align: right;
+}
+
+th:last-child{
+    text-align: right;
+}
+
+.checkout-container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-btn{
+    background-color: #fb774b;
+    color: white;
+}
+
+.orders table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders .product-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.orders th{
+    padding: 5px 10px;
+    color: white;
+    background-color: #fb774b;
+    text-align: left;
+}
+
+.orders th:nth-child(2){
+    text-align: right;
+}
+
+.orders td{
+    padding: 10px 20px;
+}
+
+.orders td:nth-child(2){
+    text-align: right;
+}
+
+.orders td img{
+    width:80px;
+    height: 80px;
+    margin-right: 10px;
 }
