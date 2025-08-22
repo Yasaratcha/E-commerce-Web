@@ -56,7 +56,7 @@ if(isset($_POST['login_btn'])) {
 
 <section class="my-5 py-5">
     <div class="container text-center mt-3 pt-5">
-        <h2>Login</h2>
+        <h2 class="form-weight-bold">Login</h2>
         <hr class="mx-auto">
     </div>
     <div class="mx-auto container">
@@ -64,11 +64,12 @@ if(isset($_POST['login_btn'])) {
             <p style="color:red" class="text-center"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
             <p style="color:red" class="text-center"><?php if(isset($_GET['message'])){echo $_GET['message'];}?></p>
             <div class="form-group">
-                <label>Email</label>
-                <input type="text" class="form-control" id="login-email" name="user_email" placeholder="Email" required>
+
+                <div class="profile"><img src="assets/imgs/profile.jpg"></div>
+
+               <input type="text" class="form-control" id="login-email" name="user_email" placeholder="Email" required>
             </div>
             <div class="form-group">
-                <label>Password</label>
                 <input type="password" class="form-control" id="login-password" name="user_password" placeholder="Password" required>
             </div>
             <div class="form-group">

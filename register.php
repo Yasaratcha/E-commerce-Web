@@ -69,27 +69,22 @@ if(isset($_POST['register'])){
       <!-- to get and display error -->
       <p style="color:red"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
 
-      <div class="form-group">
-        <label>First Name</label>
+      <div class="form-group mb-2">
         <input type="text" class="form-control" id="register-name" name="fname" placeholder="First Name" required/>
       </div>
-      <div class="form-group">
-        <label>Last Name</label>
+      <div class="form-group mb-2">
         <input type="text" class="form-control" id="register-name" name="lname" placeholder="Last Name" required/>
       </div>
-      <div class="form-group">
-        <label>Email</label>
+      <div class="form-group mb-2">
         <input type="text" class="form-control" id="register-email" name="email" placeholder="Email" required/>
       </div>
-      <div class="form-group">
-        <label>Password</label>
+      <div class="form-group mb-2">
         <input type="password" class="form-control" id="register-password" name="password" placeholder="Password" required/>
       </div>
-      <div class="form-group">
-        <label>Confirm Password</label>
+      <div class="form-group mb-2">
         <input type="password" class="form-control" id="register-confirm-password" name="confirmPassword" placeholder="Confirm Password" required/>
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <input type="submit" class="btn" id="register-btn" name="register" value="Register"/>
       </div>
       <div class="form-group">
