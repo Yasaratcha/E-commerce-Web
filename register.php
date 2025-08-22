@@ -2,7 +2,7 @@
 include('layouts/header.php');
 session_start();
 
-include('server/connection.php');
+include('conn/connection.php');
 
 // If user already created an account they can't enter the register form
 if(isset($_SESSION['logged_in'])){
@@ -17,6 +17,7 @@ if(isset($_POST['register'])){
     $user_email = $_POST['email'];
     $user_password = $_POST['password'];
     $confirmPassword = $_POST['confirmPassword'];
+    $access = "customer"; // always assign "customer" for new registrations
 
     // Confirm if password matches confirmPassword
     if($user_password !== $confirmPassword){
@@ -39,8 +40,8 @@ if(isset($_POST['register'])){
             $hashed_password = password_hash($user_password, PASSWORD_BCRYPT);
 
             // Insert inputted data in the register form to the database
-            $stmt = $conn->prepare("INSERT INTO users (fname, lname, user_email, user_password) VALUES(?,?,?,?)");
-            $stmt->bind_param('ssss', $fname, $lname, $user_email, $hashed_password);
+            $stmt = $conn->prepare("INSERT INTO users (fname, lname, user_email, user_password, access) VALUES (?,?,?,?,?)");
+            $stmt->bind_param('sssss', $fname, $lname, $user_email, $hashed_password, $access);
 
             if($stmt->execute()){
                 // If account was created successfully
@@ -48,6 +49,7 @@ if(isset($_POST['register'])){
                 $_SESSION['user_id'] = $user_id;
                 $_SESSION['user_email'] = $user_email;
                 $_SESSION['fname'] = $fname;
+                $_SESSION['access'] = $access; // store access in session too
                 $_SESSION['logged_in'] = true;
                 header('location: account.php?register_success=You registered successfully');
             } else {
