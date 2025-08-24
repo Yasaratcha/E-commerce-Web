@@ -11,6 +11,8 @@ if(isset($_POST['add_to_cart'])){
         $products_array_ids = array_column($_SESSION['cart'], "product_id");
         if(!in_array($_POST['product_id'], $products_array_ids)){
 
+            $product_id = $_POST['product_id'];
+
             $product_array = array(
                 'product_id' => $_POST['product_id'],
                 'product_img' => $_POST['product_img'],
@@ -43,9 +45,55 @@ if(isset($_POST['add_to_cart'])){
 
         $_SESSION['cart'][$product_id] = $product_array;
     }
+
+
+    calculateTotalCart();
+
+
+//remove product
+}else if(isset($_POST['remove_product'])){
+
+    $product_id = $_POST['product_id'];
+    unset($_SESSION['cart'][$product_id]);
+
+    calculateTotalCart();
+
+
+//edit product
+}else if(isset($_POST['edit_quantity'])){
+
+    $product_id = $_POST['product_id'];
+    $product_quantity = $_POST['product_quantity'];
+
+    $product_array = $_SESSION['cart'][$product_id];
+
+    $product_array['product_quantity'] = $product_quantity;
+
+    $_SESSION['cart'][$product_id] = $product_array;
+
+    calculateTotalCart();
+
+
 }else{
     header('location:index.php');
 }
+
+function calculateTotalCart(){
+
+    $total = 0;
+
+    foreach($_SESSION['cart'] as $key => $value){
+
+        $product = $_SESSION['cart'][$key];
+
+        $price = $product['product_price'];
+        $quantity = $product['product_quantity'];
+
+        $total = $total + ($price * $quantity);
+    }
+    $_SESSION['total'] = $total;
+}
+
 
 
 ?>
@@ -75,19 +123,27 @@ if(isset($_POST['add_to_cart'])){
                     <p><?php echo $value['product_name']; ?></p>
                     <small><span>Php </span><?php echo $value['product_price']; ?></small>
                     <br>
-                    <a class="remove-btn" href="#">Remove</a>
+                    <form method="POST" action="cart.php">
+                        <input type="hidden" name="product_id" value="<?php echo $value['product_id'];?>"/>
+                        <input type="submit" name="remove_product" class="remove-btn" value="remove"/>
+                    </form>
+                    
                 </div>
             </div>
         </td>
 
         <td>
-            <input type="number" value="<?php echo $value['product_quantity']; ?>">
-            <a class="edit-btn" href="#">Edit</a>
+            <form method="POST" action="cart.php">
+                <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>"/>
+                <input type="number" name="product_quantity" value="<?php echo $value['product_quantity']; ?>"/>
+                <input type="submit" class="edit-btn" value="edit" name="edit_quantity"/>
+            </form>
+            
         </td>
 
         <td>
             <span>Php</span>
-            <span class="product-price">199.00</span>
+            <span class="product-price"><?php echo $value['product_quantity'] * $value['product_price'];?></span>
         </td>
     </tr>
 
@@ -100,12 +156,8 @@ if(isset($_POST['add_to_cart'])){
     <div class="cart-total">
         <table>
             <tr>
-                <td>Subtotal</td>
-                <td>Php 199.00</td>
-            </tr>
-            <tr>
                 <td>Total</td>
-                <td>Php 199.00</td>
+                <td>Php <?php echo $_SESSION['total']; ?></td>
             </tr>
         </table>
     </div>
