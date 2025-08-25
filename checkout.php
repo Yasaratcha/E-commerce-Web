@@ -1,5 +1,21 @@
 <?php include('layouts/header.php'); ?>
 
+<?php 
+
+session_start();
+
+if(!empty($_SESSION['cart']) && isset($_POST['checkout'])){
+
+
+}else{
+
+  header('location: index.php');
+}
+
+?>
+
+
+
 
 <!--Checkout-->
 <section class="my-5 py-5">
@@ -8,12 +24,12 @@
     <hr class="mx-auto">
   </div>
   <div class="mx-auto container">
-    <form id="checkout-form" method="POST" action="register.php">
+    <form id="checkout-form" method="POST" action="conn/place_order.php">
       <!-- to get and display error -->
       <p style="color:red"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
 
       <div class="form-group mb-2 checkout-small-element">
-        <input type="text" class="form-control" id="checkout-fname" name="fname" placeholder="Check Out" required/>
+        <input type="text" class="form-control" id="checkout-fname" name="fname" placeholder="First Name" required/>
       </div>
       <div class="form-group mb-2 checkout-small-element">
         <input type="text" class="form-control" id="checkout-lname" name="lname" placeholder="Last Name" required/>
@@ -31,7 +47,8 @@
         <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Address" required/>
       </div>
       <div class="form-group mb-2 checkout-btn-container">
-        <input type="submit" class="btn" id="checkout-btn" name="register" value="Checkout"/>
+        <p>Total amount: Php <?php echo $_SESSION['total']; ?></p>
+        <input type="submit" class="btn" id="checkout-btn" name="place_order" value="Place Order"/>
       </div>
     </form>
   </div>
