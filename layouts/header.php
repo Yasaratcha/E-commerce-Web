@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="assets/css/style.css?v=6">
+    <link rel="stylesheet" href="assets/css/style.css?v=9">
 <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=B7BFCBWz954Q39YSXhFCxZ7WYzvFRl5Pzht6ILrodp17hUqWRIZzVQ5HA_b70TedwQtHv77ovAfE317JV_60hS_ERXPLiYOliTdtx9f0SmUA13-ZHyC-O37NRxcI9xMUmFJoRde4tw1Jcnj9-CMQHS2oNH3PubXWIr_VPQgA_7IhnzE1Tap1Na7nwtBZcKLGBjEl3Vg1XUvQbQu71qyVmrCZ0CCDITdV0IK2JXx6k_Emm3ClhK68CAWZJMw7Bu1JxuF48nPqaNKxlZukfAn0UgY2en1JHipeAAO0ub-DJ5MbbY8cudRIIpijp9FjRWKpw9Xm7wMRcA9VayhByok0NcpfriztGC3ckOP42Lyw6187ZQREVObW8LTRRlAFvkt_PSWocYuEzOAMyESyPM1KhTFH4WgrDQotQgOT_Ld70cLh8EnzPfPpgLY7DZoKtRmIj0pI-krFuh3UkRuCHDCNbUn1s1JXSihfDrk_arcsD1eA4en-tjMNFTkAhrYE82O9ls0Lty-tZmasOdOaDlZqbv8wSRSZAmTs5Xa4WpbvOjYtB5WGaFe61VIWmK9G6MuCm_tufr7G1smojzq4g0gG7oPRFfR60VP9QbQoIDHM3_bloI9Rc3OO3Ix4jZadnh6o_cGZd1qKbdchzW_fuPaTNw" charset="UTF-8"></script></head>
 <body>
 
@@ -40,8 +40,8 @@
               </li>
 
               <li class="nav-item">
-                <a href="cart.php"><i class="fas fa-shopping-basket"></i></a>
-                <a href="account.php"><i class="fas fa-user"></i></a>
+                <a class="icon" href="cart.php"><i class="fas fa-shopping-basket"></i></a>
+                <a class="icon" href="account.php"><i class="fas fa-user"></i></a>
               </li>
 
               
