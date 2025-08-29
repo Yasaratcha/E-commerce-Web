@@ -604,11 +604,15 @@ th:last-child{
     padding: 5px 10px;
     color: white;
     background-color: #fb774b;
-    text-align: left;
+    text-align: center; 
+}
+
+.orders td{
+    text-align: center;
 }
 
 .orders th:nth-child(2){
-    text-align: right;
+     text-align: center; 
 }
 
 .orders td{
@@ -616,7 +620,7 @@ th:last-child{
 }
 
 .orders td:nth-child(2){
-    text-align: right;
+    text-align: center;
 }
 
 .orders td img{
@@ -624,6 +628,17 @@ th:last-child{
     height: 80px;
     margin-right: 10px;
 }
+
+.orders .order-details-btn{
+    color: white;
+    background-color: #fb774b;
+}
+
+.orders .order-details th:nth-child(1){
+    text-align: left;
+}
+
+
 
 #checkout-form .checkout-small-element{
     display: inline-block;
