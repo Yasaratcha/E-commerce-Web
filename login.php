@@ -46,7 +46,7 @@ if(isset($_POST['login_btn'])) {
         $_SESSION['user_email'] = $user['user_email'];
         $_SESSION['logged_in'] = true;
 
-        header('location:account.php?login_success=Logged in successfully');
+        header('location:account.php?message=Logged in successfully');
     } else {
         header('location:login.php?error=Could not verify your account');
     }
@@ -58,11 +58,12 @@ if(isset($_POST['login_btn'])) {
     <div class="container text-center mt-3 pt-5">
         <h2 class="form-weight-bold">Login</h2>
         <hr class="mx-auto">
+        <p style="color:red" class="text-center"><?php if(isset($_GET['error-msg'])){echo $_GET['error-msg'];}?></p>
     </div>
     <div class="mx-auto container">
         <form id="login-form" method="POST" action="login.php">
             <p style="color:red" class="text-center"><?php if(isset($_GET['error'])){echo $_GET['error'];}?></p>
-            <p style="color:red" class="text-center"><?php if(isset($_GET['message'])){echo $_GET['message'];}?></p>
+            <p style="color:green" class="text-center"><?php if(isset($_GET['message'])){echo $_GET['message'];}?></p>
             <div class="form-group">
 
                 <div class="profile"><img src="assets/imgs/profile.jpg"></div>

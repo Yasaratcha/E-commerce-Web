@@ -46,6 +46,19 @@ if(!empty($_SESSION['cart']) && isset($_POST['checkout'])){
       <div class="form-group mb-2 checkout-small-element">
         <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Address" required/>
       </div>
+      <div class="form-group mb-3 checkout-small-element">
+        <label for="payment_method" class="form-label"><h4>Select Payment Method:</h4></label><br>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="payment_method" id="payment_gcash" value="GCash" required>
+          <label class="form-check-label" for="payment_gcash">GCash</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="payment_method" id="payment_cod" value="COD" required>
+          <label class="form-check-label" for="payment_cod">Cash on Delivery (COD)</label>
+        </div>
+
       <div class="form-group mb-2 checkout-btn-container">
         <p>Total amount: Php <?php echo $_SESSION['total']; ?></p>
         <input type="submit" class="btn" id="checkout-btn" name="place_order" value="Place Order"/>

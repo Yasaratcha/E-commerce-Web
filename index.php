@@ -28,21 +28,21 @@
           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
           <img class="img-fluid" src="assets/imgs/cover1.jpg">
           <div class="details">
-            <button class="text-uppercase"><h2>Milktea</h2></button>
+            <a href="milktea.php"><button class="text-uppercase"><h2>Milktea</h2></button></a>
           </div>
         </div>
           <!--Two-->
           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
             <img class="img-fluid" src="assets/imgs/cover2.jpg">
               <div class="details">
-               <button class="text-uppercase"><h2>Pastries</h2></button>
+               <a href="pastries.php"><button class="text-uppercase"><h2>Pastries</h2></button></a>
           </div>
         </div>
           <!--Three-->
           <div class="one col-lg-4 col-md-12 col-sm-12 p-0">
             <img class="img-fluid" src="assets/imgs/cover3.jpg">
               <div class="details">
-                 <button class="text-uppercase"><h2>Brewed Coffee</h2></button>
+                 <a href="coffee.php"><button class="text-uppercase"><h2>Brewed Coffee</h2></button></a>
            </div>
           </div>
         </div>

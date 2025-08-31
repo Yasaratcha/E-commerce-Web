@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('server/connection.php');
+include('conn/connection.php');
 
 function fetchOrders($conn) {
     // Fetch all orders from the orders table

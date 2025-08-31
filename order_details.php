@@ -7,6 +7,7 @@ include('conn/connection.php');
 if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
 
     $order_id = $_POST['order_id'];
+    $order_status = $_POST['order_status'];
 
     $stmt = $conn->prepare("SELECT * FROM order_items WHERE order_id=? ");
     $stmt->bind_param('i',$order_id);
@@ -57,6 +58,11 @@ if(isset($_POST['order_details_btn']) && isset($_POST['order_id'])){
 
     </table>
 
+    <?php if($order_status == "Not Paid"){?>
+        <form style="float: right;">
+            <input type="submit" class="btn btn-primary" value="Pay Now">
+        </form>
+     <?php }?>
 
 </section>
 
