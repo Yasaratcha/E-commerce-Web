@@ -51,14 +51,12 @@ if(isset($_SESSION['logged_in'])){
     
     $user_id = $_SESSION['user_id'];
 
-    $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id=?");
-
+    // Limit results to only 8 orders
+    $stmt = $conn->prepare("SELECT * FROM orders WHERE user_id=? ORDER BY order_date DESC LIMIT 8");
     $stmt->bind_param('i',$user_id);
-
     $stmt->execute();
 
     $orders = $stmt->get_result();
-
 }
 ?>
 

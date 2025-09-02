@@ -50,7 +50,7 @@ if(isset($_GET['product_id'])){
 
         <div class="col-lg-6 col-md-12 col-12">
             <h6>Products</h6>
-            <h3 class="py-4">Milktea</h3>
+            <h3 class="py-4"><?php echo $row['product_name']; ?></h3>
             <h2>Php <?php echo $row['product_price']; ?></h2>
 
        <form method="POST" action="cart.php">

@@ -37,7 +37,7 @@
         <!---Must Try--->
         <section id="must-try" class="my-5 py-5">
             <div class="container mt-5 py-5">
-            <h3>MUST TRY</h3>
+            <h3>MILKTEA</h3>
             <hr>
             </div>
             <div class="row mx-auto container">
