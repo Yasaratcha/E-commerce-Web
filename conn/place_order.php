@@ -77,15 +77,18 @@ if(isset($_POST['place_order'])){
         $stmt1->execute();
     }
 
-    // ✅ Insert into payments table only for COD
+        // ✅ Insert into payments table only for COD
     if($payment_method === "COD"){
         $payment_date = date('Y-m-d H:i:s');
         $stmt2 = $conn->prepare("INSERT INTO payments (order_id, fname, lname, user_email, payment_method, payment_cost, payment_status, user_city, user_address, payment_date) 
-                                 VALUES (?,?,?,?,?,?,?,?,?,?)");
+                                VALUES (?,?,?,?,?,?,?,?,?,?)");
         $stmt2->bind_param("issssissss", $order_id, $fname, $lname, $email, $payment_method, $order_cost, $payment_status, $city, $address, $payment_date);
         $stmt2->execute();
-    }
 
+        // ✅ Redirect COD users to a confirmation page
+        header("Location: ../order_success.php?order_id=$order_id");
+        exit;
+    }
     // Clear cart after order
      unset($_SESSION['cart']);
 
