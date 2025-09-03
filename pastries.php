@@ -2,7 +2,7 @@
 include('layouts/header.php');
 include_once("conn/connection.php");
 
-$stmt = $conn->prepare("SELECT * FROM products WHERE product_category = 'Pastries'");
+$stmt = $conn->prepare("SELECT * FROM products WHERE product_category = 'Pastries' AND is_deleted = FALSE");
 
 $stmt->execute();
 
@@ -14,7 +14,10 @@ $products = $stmt->get_result();
             $page_no =1;
           }
           
-         $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records FROM products WHERE product_category = 'Pastries'");
+         $stmt1 = $conn->prepare("SELECT COUNT(*) AS total_records 
+                         FROM products 
+                         WHERE product_category = 'Pastries' 
+                         AND is_deleted = FALSE");
           $stmt1->execute();
           $stmt1->bind_result($total_records);
           $stmt1->store_result();
@@ -29,7 +32,10 @@ $products = $stmt->get_result();
           $adjacents = "2";
           $total_no_of_pages = ceil($total_records/$total_records_per_page);
 
-           $stmt2 = $conn->prepare("SELECT * FROM products WHERE product_category = 'Pastries' LIMIT $offset,$total_records_per_page");
+           $stmt2 = $conn->prepare("SELECT * FROM products 
+                         WHERE product_category = 'Pastries' 
+                         AND is_deleted = FALSE 
+                         LIMIT $offset, $total_records_per_page");
           $stmt2->execute();
           $products = $stmt2->get_result();
 ?>
